@@ -107,10 +107,9 @@
     createComment = function(beginnings, ingredients, links, conclusions) {
         var beginning = beginnings.randomElement();
         var ingredient = ingredients.randomElement();
-        var ingredient2 = ingredients.randomElement();
-        while(ingredient2 == ingredient) {
+        do {
             ingredient2 = ingredients.randomElement();
-        }
+        } while(ingredient2 == ingredient)
         var link = links.randomElement();
         var conclusion = conclusions.randomElement();
         var comment = beginning.sentence + ingredient.article[beginning.type] + ingredient.name + link.sentence + ingredient2.article[link.type] + ingredient2.name + conclusion.sentence
