@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="fr" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="fr" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="fr"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="fr" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="fr" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="fr"> <!--<![endif]-->
 <head>
     <title>Cyber Marmiton Comment Generator 2000</title>
     <!-- Meta -->
@@ -9,12 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cyber Marmiton Comment Generator 2000">
-    <meta name="author" content="Setebos">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <link rel="stylesheet" href="css/bootstrap.min.css">   
-    <link rel="stylesheet" href="css/style.css">   
-    <script src="js/jquery-3.1.1.slim.min.js"></script>
-</head> 
+    <meta name="author" content="Setebos">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
 <body>
     <div class="title-background">
@@ -28,94 +27,7 @@
     </div>
 </body>
 
-<script type="text/javascript">
-    Array.prototype.randomElement = function () {
-        return this[Math.floor(Math.random() * this.length)]
-    }
-
-    $(document).ready(function() {
-    
-        var beginnings = [
-            {sentence: "J'avais plus ", type: 0},
-            {sentence: "J'étais à court ", type: 0},
-            {sentence: "J'avais oublié de racheter ", type: 2},
-            {sentence: "Je n'aime pas ", type: 1},
-            {sentence: "Je trouve que ça n'a pas une jolie couleur ", type: 1},
-            {sentence: "Je préfère éviter de manger ", type: 2},
-            {sentence: "Je suis allergique ", type: 3},
-            {sentence: "J'ai eu de mauvaises expériences avec ", type: 1},
-            {sentence: "Mes enfants n'aiment pas ", type: 1},
-            {sentence: "Mon chien avait mangé ", type: 1},
-        ]
-
-        var ingredients = [
-            {name: "poivrons", article: ["de ", "les ", "des ", "aux "]},
-            {name: "sucre", article: ["de ", "le ", "du ", "au "]},
-            {name: "semoule", article: ["de ", "la ", "de la ", "à la "]},
-            {name: "huitres", article: ["d'", "les ", "des ", "aux "]},
-            {name: "melons", article: ["de ", "les ", "des ", "aux "]},
-            {name: "poivre", article: ["de ", "le ", "du ", "au "]},
-            {name: "sardines", article: ["de ", "les ", "des ", "aux "]},
-            {name: "oignons", article: ["d'", "les ", "des ", "aux "]},
-            {name: "nutella", article: ["de ", "le ", "du ", "au "]},
-            {name: "framboises", article: ["de ", "les ", "des ", "aux "]},
-            {name: "sel", article: ["de ", "le ", "du ", "au "]},
-            {name: "huile d'olive", article: ["d'", "l'", "de l'", "à l'"]},
-            {name: "miel", article: ["de ", "le ", "du ", "au "]},
-            {name: "jambon", article: ["de ", "le ", "du ", "au "]},
-            {name: "truffes", article: ["de ", "les ", "des ", "aux "]},
-            {name: "chocolat", article: ["de ", "le ", "du ", "au "]},
-            {name: "saumon", article: ["de ", "le ", "du ", "au "]},
-            {name: "marrons", article: ["de ", "les ", "des ", "aux "]},
-        ]
-
-        var links = [
-            {sentence: ", alors j'ai mis ", type: 2},
-            {sentence: ", du coup j'ai mis ", type: 2},
-            {sentence: ", j'ai préféré mettre ", type: 2},
-            {sentence: ", j'ai remplacé par ", type: 2},
-            {sentence: ", du coup j'ai remplacé par ", type: 2},
-            {sentence: ", j'ai rajouté ", type: 2},
-            {sentence: ", alors j'ai préféré y substituer ", type: 2},
-            {sentence: ", je me suis dit que ce serait meilleur avec ", type: 2},
-            {sentence: ", j'ai changé pour mettre ", type: 2},
-        ]
-
-        var conclusions = [
-            {sentence: ", mon Homme s'est régalé !"},
-            {sentence: ", mon chéri a été soufflé !"},
-            {sentence: ", les enfants ont adoré !"},
-            {sentence: ", les enfants ont tout mangé !"},
-            {sentence: ", les enfants en redemandent !"},
-            {sentence: ", ma femme a beaucoup aimé !"},
-            {sentence: ", ma femme n'en revenait pas !"},
-            {sentence: ", c'était pas terrible ! 1 étoile !"},
-            {sentence: ", c'était beaucoup trop salé."},
-            {sentence: ", ça n'avait pas beaucoup de gout."},
-            {sentence: ", je n'ai pas pu finir."},
-            {sentence: ", c'était infect !"},
-            {sentence: ", cette recette n'est pas terrible."},
-        ]
-
-        createComment(beginnings, ingredients, links, conclusions);
-
-        $("#refresh-comment").click(function() {
-            createComment(beginnings, ingredients, links, conclusions);
-        })
-    }) 
-
-    createComment = function(beginnings, ingredients, links, conclusions) {
-        var beginning = beginnings.randomElement();
-        var ingredient = ingredients.randomElement();
-        do {
-            ingredient2 = ingredients.randomElement();
-        } while(ingredient2 == ingredient)
-        var link = links.randomElement();
-        var conclusion = conclusions.randomElement();
-        var comment = beginning.sentence + ingredient.article[beginning.type] + ingredient.name + link.sentence + ingredient2.article[link.type] + ingredient2.name + conclusion.sentence
-        
-        $('#marmiton-comment').html(comment);
-    }
-</script>
-</html> 
+<script src="js/jquery-3.1.1.slim.min.js"></script>
+<script src="js/generator.js"></script>
+</html>
 
