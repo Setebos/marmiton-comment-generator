@@ -2,6 +2,10 @@ Array.prototype.randomElement = function () {
     return this[Math.floor(Math.random() * this.length)];
 };
 
+function randomIntFromInterval(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
 var beginnings = [
     {sentence: "J'avais plus ", type: 0},
     {sentence: "J'étais à court ", type: 0},
@@ -80,6 +84,7 @@ createComment = function () {
     var ingredient2 = ingredients.filter(function (value) {
         return value.name != ingredient.name;
     }).randomElement();
+    var image       = randomIntFromInterval(0, 20);
 
     var comment = beginning.sentence +
         ingredient.article[beginning.type] +
@@ -90,4 +95,5 @@ createComment = function () {
         conclusion.sentence;
 
     $('#marmiton-comment').html(comment);
+    $('#marmiton-image').html("<img src='img/illustrations/" + image + ".jpg'>");
 };

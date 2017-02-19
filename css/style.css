@@ -16,6 +16,16 @@ h1 {
 	font-weight: bold;
 }
 
+#marmiton-image {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#marmiton-image img {
+	max-height: 450px;
+	max-width: 100%;
+}
+
 #marmiton-comment {
 	text-align: center;
 	margin-top: 50px;
